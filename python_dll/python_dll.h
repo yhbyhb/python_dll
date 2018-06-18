@@ -6,6 +6,8 @@ extern "C" {
 
     __declspec(dllexport) int test_print_console();
 
+    __declspec(dllexport) int test_vector_add(float* c, float* a, float* b, int length);
+
 #ifdef __cplusplus
 }
 #endif
