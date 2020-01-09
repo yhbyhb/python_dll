@@ -1,6 +1,8 @@
 import ctypes
 import numpy as np
+import os
 
+os.add_dll_directory(os.getcwd())
 hllDll = ctypes.windll.LoadLibrary("python_dll.dll")
 
 test_print_console = hllDll.test_print_console # need the extern!!
@@ -19,8 +21,8 @@ c = np.zeros((length, 1), dtype=np.float32)
 
 print(
 	test_vector_add(
-		ctypes.c_void_p(c.ctypes.data), 
-		ctypes.c_void_p(a.ctypes.data), 
+		ctypes.c_void_p(c.ctypes.data),
+		ctypes.c_void_p(a.ctypes.data),
 		ctypes.c_void_p(b.ctypes.data),
 		ctypes.c_int(length))
 	)
